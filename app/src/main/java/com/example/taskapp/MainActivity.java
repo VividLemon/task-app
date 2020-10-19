@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        TaskDataAccess tda = new TaskDataAccess();
+        TaskDataAccess tda = new TaskDataAccess(this);
         Task t = new Task("Haircut", new Date(), false);
         tda.insertTask(t);
         showAllTasks();

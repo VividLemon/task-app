@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    tools:context=".TaskDetailsActivity">
+
+
+    <TextView
+        android:id="@+id/lblDescription"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:text="@string/lbl_descrtiption" />
+
+    <EditText
+        android:id="@+id/txtDescription"
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/lblDueDate"
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:text="@string/lbl_due" />
+
+    <EditText
+        android:id="@+id/txtDueDate"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/lbl_due" />
+
+    <CheckBox
+        android:id="@+id/chkDone"
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
+        android:text="@string/lbl_done" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/btn_save" />
+</LinearLayout>

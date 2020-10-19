@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Task App</string>
+    <string name="lbl_descrtiption">Description</string>
+    <string name="lbl_due">Due Date</string>
+    <string name="lbl_done">Done</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_add">Add New Task</string>
 </resources>
