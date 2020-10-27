@@ -19,6 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="81dp"
         android:ems="10"
+        android:hint="Description"
         android:inputType="textPersonName"
         android:text="" />
 
@@ -33,8 +34,8 @@
         android:layout_width="match_parent"
         android:layout_height="72dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/lbl_due" />
+        android:hint="@string/lbl_due"
+        android:inputType="textPersonName" />
 
     <CheckBox
         android:id="@+id/chkDone"

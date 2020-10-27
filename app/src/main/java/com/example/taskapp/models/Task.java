@@ -54,7 +54,4 @@ public class Task {
         return String.format("ID: %d DESC: %s DUE: %s DONE: %b", id, description, (due != null ? due.toString() : null), done);
     }
 
-
-
-
 }
