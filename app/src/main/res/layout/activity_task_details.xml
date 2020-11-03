@@ -35,7 +35,7 @@
         android:layout_height="72dp"
         android:ems="10"
         android:hint="@string/lbl_due"
-        android:inputType="textPersonName" />
+        android:inputType="date" />
 
     <CheckBox
         android:id="@+id/chkDone"
