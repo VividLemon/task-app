@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         showAllTasks();
         t.setDescription("DO HOMEWORK");
         tda.updateTask(t);
-        tda.deletedTask(t);
+        tda.deleteTask(t);
         showAllTasks();
     }
 

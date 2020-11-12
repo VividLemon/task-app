@@ -2,6 +2,7 @@ package com.example.taskapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.taskapp.fileio.CSVTaskDataAccess;
 import com.example.taskapp.models.Task;
 
 import java.util.ArrayList;
@@ -20,8 +22,10 @@ public class TaskListActivity extends AppCompatActivity {
     public static final String TAG = "TaskListActivity";
     ListView lsTasks;
     Button btnAdd;
-    TaskDataAccess tda;
+    Taskable tda;
     ArrayList<Task> allTasks;
+
+
 
 
     @Override
@@ -29,9 +33,15 @@ public class TaskListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_list2);
 
+        SQLTaskDataAccess test = new SQLTaskDataAccess(this);
+
         lsTasks = findViewById(R.id.lsTasks);
-        tda = new TaskDataAccess(this);
+        tda = new CSVTaskDataAccess(this);
         allTasks = tda.getAllTasks();
+        if(allTasks.size() == 0){ // no tasks to display then go to new class
+            Intent i = new Intent(this, TaskDetailsActivity.class);
+            startActivity(i );
+        }
         btnAdd = findViewById(R.id.btnAdd);
 
         btnAdd.setOnClickListener(new View.OnClickListener() {

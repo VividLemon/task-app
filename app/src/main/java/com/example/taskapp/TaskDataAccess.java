@@ -7,7 +7,7 @@ import com.example.taskapp.models.Task;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class TaskDataAccess {
+public class TaskDataAccess implements Taskable{
 
     private Context context;
 
@@ -21,6 +21,7 @@ public class TaskDataAccess {
     public TaskDataAccess(Context context){
         this.context = context;
     }
+
 
     public Task insertTask(Task t){
         allTasks.add(t);
@@ -41,11 +42,12 @@ public class TaskDataAccess {
         return null;
     }
 
+
     public Task updateTask(Task t){
         return t;
     }
 
-    public int deletedTask(Task t){
+    public int deleteTask(Task t){
         if(allTasks.contains(t)){
             allTasks.remove(t);
             return 1;

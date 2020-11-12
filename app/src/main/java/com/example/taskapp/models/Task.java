@@ -14,6 +14,10 @@ public class Task {
         this.done = done;
     }
 
+    public Task() {
+
+    }
+
     public long getId() {
         return id;
     }

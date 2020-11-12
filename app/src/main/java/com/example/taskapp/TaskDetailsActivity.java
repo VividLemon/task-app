@@ -12,18 +12,20 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
+import com.example.taskapp.fileio.CSVTaskDataAccess;
 import com.example.taskapp.models.Task;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class TaskDetailsActivity extends AppCompatActivity {
 
     public static final String TAG = "TaskDetailsActivity";
     public static final String EXTRA_TASK_ID = "taskId";
     Task task;
-    TaskDataAccess tda;
-    SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
+    Taskable tda;
+    SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy", Locale.US);
     EditText txtDescription;
     EditText txtDueDate;
     CheckBox chkDone;
@@ -40,7 +42,7 @@ public class TaskDetailsActivity extends AppCompatActivity {
         btnSave = findViewById(R.id.btnSave);
 
 
-        tda = new TaskDataAccess(this);
+        tda = new CSVTaskDataAccess(this);
         Intent i = getIntent();
         long id = i.getLongExtra(EXTRA_TASK_ID, 0);
         if(id > 0){
@@ -68,9 +70,6 @@ public class TaskDetailsActivity extends AppCompatActivity {
                 }
             }
         });
-
-
-
 
     }
 
@@ -124,7 +123,7 @@ public class TaskDetailsActivity extends AppCompatActivity {
             dueDate = sdf.parse(dueDateString);
         }
         catch (Exception e){
-            Log.e(TAG, "Unable to prase date string " + e.toString());
+            Log.e(TAG, "Unable to parse date string " + e.toString());
         }
         if(task != null){
             task.setDescription(desc);
