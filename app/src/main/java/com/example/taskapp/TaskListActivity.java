@@ -16,6 +16,7 @@ import com.example.taskapp.fileio.CSVTaskDataAccess;
 import com.example.taskapp.models.Task;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class TaskListActivity extends AppCompatActivity {
 
@@ -26,17 +27,27 @@ public class TaskListActivity extends AppCompatActivity {
     ArrayList<Task> allTasks;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_list2);
 
-        SQLTaskDataAccess test = new SQLTaskDataAccess(this);
-
+        SQLTaskDataAccess da = new SQLTaskDataAccess(this);
+//        Task testTask = new Task("FEED THE CAT", new Date(), false);
+//        testTask = test.insertTask(testTask);
+//        ArrayList<Task> testAllTasks = test.getAllTasks();
+//        for (Task t :
+//                testAllTasks) {
+//            Log.d(TAG, t.toString());
+//        }
+//
+//        testTask = test.getTaskById(1);
+//        if(testTask != null) {
+//            Log.d(TAG, testTask.toString());
+//        }
+//        test.deleteTask(testTask);
         lsTasks = findViewById(R.id.lsTasks);
-        tda = new CSVTaskDataAccess(this);
+        tda = new SQLTaskDataAccess(this);
         allTasks = tda.getAllTasks();
         if(allTasks.size() == 0){ // no tasks to display then go to new class
             Intent i = new Intent(this, TaskDetailsActivity.class);
@@ -51,6 +62,7 @@ public class TaskListActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
 
         ArrayAdapter<Task> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, allTasks);
         lsTasks.setAdapter(adapter);

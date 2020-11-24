@@ -5,11 +5,13 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.example.taskapp.SQLTaskDataAccess;
+
 public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
     private static final String TAG = "SQLiteOpenHelper";
     private static final String DATA_BASE_NAME = "tasks.sqlite";
-    private static final int DATA_BASE_VERSION = 2;
+    private static final int DATA_BASE_VERSION = 1;
 
     public MySQLiteOpenHelper(Context context){
         super(context, DATA_BASE_NAME, null, DATA_BASE_VERSION);
@@ -17,12 +19,13 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE  blah (_id INTEGER PRIMARY KEY AUTOINCREMENT, description TEXT, due TEXT, done INTEGER)";
+        //String sql = "CREATE TABLE  blah (_id INTEGER PRIMARY KEY AUTOINCREMENT, description TEXT, due TEXT, done INTEGER)";
+        String sql = SQLTaskDataAccess.TABLE_CREATE;
         db.execSQL(sql);
         Log.d(TAG, sql);
 
-        String insertSql = "INSERT INTO blah (description, due, done) VALUES ('foo', 'bar', 7)";
-        db.execSQL(insertSql);
+//        String insertSql = "INSERT INTO blah (description, due, done) VALUES ('foo', 'bar', 7)";
+//        db.execSQL(insertSql);
 
     }
 

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:visibility="visible">
     tools:context=".TaskDetailsActivity">
 
 
@@ -48,4 +49,12 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text="@string/btn_save" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_delete"
+        android:textColor="@android:color/holo_red_dark"
+        android:visibility="gone" />
 </LinearLayout>

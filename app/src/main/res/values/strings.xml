@@ -5,4 +5,8 @@
     <string name="lbl_done">Done</string>
     <string name="btn_save">Save</string>
     <string name="btn_add">Add New Task</string>
+    <string name="btn_delete">Delete</string>
+    <string name="confirm_delete">Confirm Delete?</string>
+    <string name="Yes">Yes</string>
+    <string name="No">No</string>
 </resources>
